@@ -5,7 +5,7 @@ The monitor system consist of two processes: the monitor node process and the mo
 
 The monitor system uses the local wifi network to communicate between the monitor node processes and the monitor visualization process. Therefore, it's important that the nodes and the monitor visualization process are on the __same local wifi network__.
 
-Because the time on the nodes can differ from that of the monitor visualization process the [Precision Time Protocol](https://en.wikipedia.org/wiki/Precision_Time_Protocol) is used to synchronize the time between the nodes and the monitor visualization process. This is done using a TCP connection between the nodes and the monitor visualization process.
+Because the time on the nodes can differ from that of the monitor visualization process, the [Precision Time Protocol](https://en.wikipedia.org/wiki/Precision_Time_Protocol) is used to synchronize the time between the nodes and the monitor visualization process. This is done using a TCP connection between the nodes and the monitor visualization process.
 
 To send the data from the nodes to the monitor visualization process a TCP connection is used.
 
