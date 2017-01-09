@@ -21,6 +21,7 @@ pip install eventlet
 pip install flask
 pip install python-socketio
 ```
+__Before running the program, it is important to change the ip in [config.ini](config.ini) into the local ip address of the device the monitor visualization process is running on!__
 
 To run the monitor visualization program:
 ```
