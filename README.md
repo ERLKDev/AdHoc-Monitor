@@ -28,7 +28,9 @@ To run the monitor visualization program:
 Python -u monitorService.py
 ```
 
-The settings of the monitor visualization program can be modified in [config.ini](CONTRIBUTING.md).
+The UI is on default served on port 3000: [http://localhost:3000/](http://localhost:3000/)
+
+The settings of the monitor visualization program can be modified in [config.ini](config.ini).
 
 ```
 [Connection]
