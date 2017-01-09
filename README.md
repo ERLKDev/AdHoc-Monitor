@@ -3,12 +3,7 @@ AdHoc-Monitor
 
 The monitor system consist of two processes: the monitor node process and the monitor visualisation process. The monitor node process collects the information about the nodes and sends it to the monitor visualization process. Therefore, the monitor node process should run on each node. The monitor visualization process receives the data from the monitor node processes and combines them into one visualization. 
 
-
-The monitor node process
------------------------------
-For the monitor node process an android module is available, which can be used for android ad hoc networks. 
-
-
+The monitor system uses the local wifi network to communicate between the monitor node processes and the monitor visualization process. Therefore, it's important that the nodes and the monitor visualization process are on the __same local wifi network__.
 
 The monitor visualization process  
 -------------------------------------
@@ -52,5 +47,8 @@ statuscolors = {'idle': 'orange', 'processing': 'green', 'starting': 'lightgreen
 statusunknown = gray        # Node color if the status is unknown (not in statuscolors)
 ```
 
+The monitor node process
+-----------------------------
+For the monitor node process an android module is available, which can be used for android ad hoc networks. 
 
 
