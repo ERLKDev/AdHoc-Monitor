@@ -7,7 +7,7 @@ The monitor system uses the local wifi network to communicate between the monito
 
 Because the time on the nodes can differ from that of the monitor visualization process, the [Precision Time Protocol](https://en.wikipedia.org/wiki/Precision_Time_Protocol) is used to synchronize the time between the nodes and the monitor visualization process. This is done using a TCP connection between the nodes and the monitor visualization process.
 
-To send the data from the nodes to the monitor visualization process a TCP connection is used.
+To send the data from the nodes to the monitor visualization process a UDP connection is used.
 
 The monitor visualization process  
 -------------------------------------
