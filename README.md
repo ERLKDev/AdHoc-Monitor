@@ -56,4 +56,44 @@ The monitor node process
 -----------------------------
 For the monitor node process an android module is available, which can be used for android ad hoc networks. 
 
+The android monitor service should be started and bind to the android application. After that, the monitor can be started. 
+The following code can be used do this:
+```java
+ /* Start monitor service. */
+Intent mAdhocMonitorIntent = new Intent(this, AdhocMonitorService.class);
+startService(mAdhocMonitorIntent);
+
+/* Bind monitor service. */
+bindService(mAdhocMonitorIntent, new ServiceConnection() {
+    @Override
+    public void onServiceConnected(ComponentName className, IBinder service) {
+        Log.d("MonitorService", "Adhoc Monitor service is connected");
+        AdhocMonitorBinder adhocMonitorBinder = (AdhocMonitorBinder) service;
+        AdhocMonitorService mMonitor = adhocMonitorBinder.getService();
+
+        /* Starts the monitor. */
+        mMonitor.startMonitor(mAddress, "192.168.1.4");
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName arg0) {
+        Log.d("MonitorService", "Adhoc Monitor service is disconnected");
+    }
+}, BIND_AUTO_CREATE);
+```
+
+In the code above the monitor is started on the default ports, to start the monitor with custom ports (in this example 7000 for UDP and 7001 for TCP) the following code can be used:
+```java
+mMonitor.startMonitor(mAddress, "192.168.1.4", 7000, 7001);
+```
+
+The montitor can also be started with an error listener, with both the default ports and the custom ports method:
+```java
+mMonitor.startMonitor(mAddress, "192.168.1.4", new AdhocMonitorService.MonitorErrorListener() {
+    @Override
+    public void onError(String errorMsg) {
+        Log.d("MonitorService", errorMsg);
+    }
+});
+```
 
