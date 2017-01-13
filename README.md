@@ -121,4 +121,14 @@ To add an extra status:
 2. Add the status to the monitor visualization process [config.ini](config.ini) to select the color of the status 
 
 
+#### Structure
+The current neighbours of the node (the nodes were the node has a connections with) can be set using the following code:
+
+```java
+mMonitor.getMonitorNode().setCurrentNeighbours(["address1", "address2"]);
+```
+
+The addresses could for instance be the mac addresses of the nodes.
+
+__This function should be called each time the neighbours of the node changes. For example, a new connection is made, or a connection is lost.__
 
