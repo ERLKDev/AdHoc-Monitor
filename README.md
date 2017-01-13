@@ -13,6 +13,7 @@ The monitor visualization process
 -------------------------------------
 For the monitor visualization process a python program is available. The python program provides a web based user interface.
 
+### Dependencies
 The python program runs on python 2.7 and uses [eventlet](https://github.com/eventlet/eventlet), [flask](http://flask.pocoo.org/) and [python-socketio](https://github.com/miguelgrinberg/python-socketio) to serve a web based UI.
 
 To install the dependencies using pip:
@@ -21,6 +22,8 @@ pip install eventlet
 pip install flask
 pip install python-socketio
 ```
+
+### Starting the monitor visualization process 
 __Before running the program, it is important to change the ip in [config.ini](config.ini) into the local ip address of the device the monitor visualization process is running on!__
 
 To run the monitor visualization program:
@@ -30,6 +33,7 @@ Python -u monitorService.py
 
 The UI is on default served on port 3000: [http://localhost:3000/](http://localhost:3000/)
 
+### Config
 The settings of the monitor visualization program can be modified in [config.ini](config.ini).
 
 ```
@@ -56,6 +60,7 @@ The monitor node process
 -----------------------------
 For the monitor node process an android module is available, which can be used for android ad hoc networks. 
 
+### Starting the monitor
 The android monitor service should be started and bind to the android application. After that, the monitor can be started. 
 The following code can be used do this:
 ```java
@@ -96,4 +101,24 @@ mMonitor.startMonitor(mAddress, "192.168.1.4", new AdhocMonitorService.MonitorEr
     }
 });
 ```
+
+### Setting values
+The monitor node process collects information about the node. Howerover, not all information can be collected automatically. Therefore, there are a couple functions that should be used to provide the information to the monitor node process. 
+
+__The following code fragments assume that the monitor service is bound and started. The monitor service is stored in a variable: mMonitor.__
+#### Status
+The node status can be set with the following code:
+```java
+mMonitor.getMonitorNode().setNodeStatus(MonitorNode.Status.IDLE);
+```
+
+The enum Status contains the different statusses that a node can have. 
+
+To add an extra status:
+
+1. Add the status to the Status enum. 
+
+2. Add the status to the monitor visualization process [config.ini](config.ini) to select the color of the status 
+
+
 
