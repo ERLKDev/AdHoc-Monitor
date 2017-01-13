@@ -38,7 +38,7 @@ The settings of the monitor visualization program can be modified in [config.ini
 
 ```
 [Connection]
-ip = 192.168.1.4            # Local IP address of te monitor visualization program
+ip = 192.168.1.4            # Local IP address of the monitor visualization program
 udp_port = 7000             # UDP Port for the node data packets
 tcp_port = 7001             # TCP Port for the time synchronization
 udp_maxpacketsize = 8096    # The packet size of the node data packets
@@ -92,7 +92,7 @@ In the code above the monitor is started on the default ports, to start the moni
 mMonitor.startMonitor(mAddress, "192.168.1.4", 7000, 7001);
 ```
 
-The montitor can also be started with an error listener, with both the default ports and the custom ports method:
+The monitor can also be started with an error listener, with both the default ports and the custom ports method:
 ```java
 mMonitor.startMonitor(mAddress, "192.168.1.4", new AdhocMonitorService.MonitorErrorListener() {
     @Override
@@ -103,7 +103,7 @@ mMonitor.startMonitor(mAddress, "192.168.1.4", new AdhocMonitorService.MonitorEr
 ```
 
 ### Setting values
-The monitor node process collects information about the node. Howerover, not all information can be collected automatically. Therefore, there are a couple functions that should be used to provide the information to the monitor node process. 
+The monitor node process collects information about the node. However, not all information can be collected automatically. Therefore, there are a couple functions that should be used to provide the information to the monitor node process. 
 
 __The following code fragments assume that the monitor service is bound and started. The monitor service is stored in a variable: mMonitor.__
 #### Status
@@ -112,7 +112,7 @@ The node status can be set with the following code:
 mMonitor.getMonitorNode().setNodeStatus(NodeStatus.IDLE);
 ```
 
-The enum Status contains the different statusses that a node can have. 
+The enum Status contains the different statuses that a node can have. 
 
 To add an extra status:
 
@@ -122,7 +122,7 @@ To add an extra status:
 
 
 #### Structure
-The current neighbours of the node (the nodes were the node has a connections with) can be set using the following code:
+The current neighbours of the node (the nodes where the node has a connections with) can be set using the following code:
 
 ```java
 mMonitor.getMonitorNode().setCurrentNeighbours(String[] currentNeighbours);
@@ -147,7 +147,7 @@ For data that is received from a neighbour node:
 mMonitor.getMonitorNode().addRecieveIO(String address, int byteAmount);
 ```
 #### Relative performance
-The CPU load of the node is automatically measured by the monitor program. However, it can also be useful to measure the performance of for instance an algorithm on the node. This can be done using ticks. Every tick is a performance tick. The monitor then calculates how many ticks per seconds are done by the node. This provides a indication of the performance of the algoritm of the node.
+The CPU load of the node is automatically measured by the monitor program. However, it can also be useful to measure the performance of for instance an algorithm on the node. This can be done using ticks. Every tick is a performance tick. The monitor then calculates how many ticks per seconds are done by the node. This provides a indication of the performance of the algorithm of the node.
 
 A tick can be done using the following code:
 ```java
@@ -160,3 +160,5 @@ Also custom values can be provided to the monitor. To do this the following code
 mMonitor.getMonitorNode().setCustomValue(String key, String value);
 ```
 Besides a String, the value can also be of the type: Integer, Double, Boolean and Long.
+
+
