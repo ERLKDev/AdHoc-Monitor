@@ -116,7 +116,7 @@ The enum Status contains the different statuses that a node can have.
 
 To add an extra status:
 
-1. Add the status to the Status enum. 
+1. Add the status to the [NodeStatus enum](adhocmonitor/src/main/java/nl/erlkdev/adhocmonitor/NodeStatus.java). 
 
 2. Add the status to the monitor visualization process [config.ini](monitor-program/config.ini) to select the color of the status 
 
