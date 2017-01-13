@@ -1,0 +1,89 @@
+.fullheight {        
+    height: 100%;
+}
+
+.remain {        
+    height: 80%;
+}
+
+.fullwidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+body, html {
+   height:100%;
+   font-family: "RobotoDraft","Roboto",sans-serif;
+}
+
+.panel {
+	border:1px solid #cacaca;
+	background-color: #6983ad; 
+}
+
+.divrow{
+	margin-top: 10px !important;
+}
+
+.divrow h4{
+	color: white;
+}
+
+.titlebar {
+	text-align: center;
+}
+
+.titlebar h3{
+	color: white;
+}
+
+.titlebar h6{
+	color: white;
+}
+
+.titlebar span{
+	color: white !important;
+}
+
+.infobox {
+	height: 20rem;
+}
+
+.infobox p{
+	margin: 0;
+	font-size: 0.8rem;
+}
+
+.chart-container{
+	background-color: white;
+}
+
+.logger{
+	background-color: white;
+	height: 100%;
+	overflow: auto;
+	width: 100%;
+}
+
+.edgeinfo{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	width: 300px;
+	height: 180px;
+	border:1px solid #cacaca;
+	background-color: #7FB0DA; 
+}
+
+.info-left{
+	position: absolute;
+}
+
+.info-left p{
+	margin: 0;
+	font-size: 0.8rem;
+}

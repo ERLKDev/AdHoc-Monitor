@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" ng-app="MonitorApp">
+<head>
+	<meta charset="utf-8">
+	<title>Monitor system</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='bower_components/foundation/css/foundation.min.css') }}" />
+	<link href="{{ url_for('static', filename='bower_components/vis/dist/vis.min.css') }}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='bower_components/angular-chart.js/dist/angular-chart.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/angularjs-slider/dist/rzslider.css') }}"/>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bower_components/angular-bootstrap-toggle-switch/style/bootstrap3/angular-toggle-switch-bootstrap-3.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}"/>
+</head>
+<body>
+
+<div ng-controller="MainCtrl" class="fullheight">
+	<div class="row fullwidth panel titlebar">
+		<h3>Monitor GUI</h3>
+		<h6>Network time:[[networkTime]]</h6>
+		<rzslider
+				rz-slider-model="slider.value"
+				rz-slider-options="slider.options"></rzslider>
+
+	</div>
+	<div class="row fullwidth remain">
+		<div id="#visualization" class="medium-7 columns fullheight">
+			<div class="info-left" ng-if="selectedNode">
+					<h4>Node</h4>
+					<p>Address: [[selectedNode]]</p>
+					<p>status: [[node.status]]</p>
+					<br>
+					<p ng-repeat="(key, value) in node.customValues track by $index">
+					  [[key]]: [[value]]
+					</p>
+				</div>
+			<vis-network data="graphData" options="graphOptions", events="graphEvents"></vis-network>
+			<div class="edgeinfo" ng-show="selectedEdge && !selectedNode">
+				<span>[[edge.from]]</span><br>
+				<span>Data send: [[edge.fromSend]] Byte</span><br>
+				<span>Data received: [[edge.fromReceive]] Byte</span><br>
+				<br>
+				<span>[[edge.to]]</span><br>
+				<span>Data send: [[edge.toSend]] Byte</span><br>
+				<span>Data received: [[edge.toReceive]] Byte</span><br>
+			</div>
+		</div>
+		<div class="medium-5 columns fullheight">
+			<div class="row divrow panel">
+				<h4>IO</h4>
+				<div class="chart-container">
+					<flot dataset="ioCharts" options="myChartOptions" height="280px"></flot>
+				</div>	
+			</div>
+			<div class="row divrow panel">
+				<h4>CPU usage / Performance</h4>
+
+				<div class="row">
+					<div class="large-4 columns">
+						<ul class="button-group round">
+						  <li><a href="#" class="button tiny" ng-style="!toggleSpeedChart && {'background-color' : '#007095'}" ng-click="toggleSpeedChart = 0">CPU usage</a></li>
+						  <li><a href="#" class="button tiny" ng-style="toggleSpeedChart && {'background-color' : '#007095'}" ng-click="toggleSpeedChart = 1">Performance</a></li>
+						</ul>
+					</div>
+		  			<div class="large-8 columns">
+						<a href="#" class="button tiny round" 
+						ng-show="!toggleSpeedChart" 
+						ng-style="toggleTotalCpuChart && {'background-color' : '#007095'} || {'background-color' : '#008CBA'}" 
+						ng-click="toggleTotalCpuChart = !toggleTotalCpuChart">
+							Total CPU usage
+						</a>
+					</div>	
+				</div>
+
+	           
+				<div class="chart-container">
+					<flot dataset="speedCharts" options="!toggleSpeedChart && myChartOptionsCPU || myChartOptions" height="280px"></flot>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/fastclick/lib/fastclick.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/foundation/js/foundation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/Flot/excanvas.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/Flot/jquery.flot.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/Flot/jquery.flot.time.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/socket.io-client/dist/socket.io.js') }}"></script>
+
+<script src="{{ url_for('static', filename='bower_components/angular/angular.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='bower_components/vis/dist/vis.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/Chart.js/Chart.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-chart.js/dist/angular-chart.js') }}"></script>
+
+<script src="{{ url_for('static', filename='bower_components/angular-visjs/angular-vis.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-socket-io/socket.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='bower_components/angularjs-slider/dist/rzslider.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-flot/angular-flot.js') }}"></script>
+<script src="{{ url_for('static', filename='bower_components/angular-bootstrap-toggle-switch/angular-toggle-switch.min.js') }}"></script>
+
+
+<script src="{{ url_for('static', filename='js/appConfig.js') }}"></script>
+<script src="{{ url_for('static', filename='js/controllers/MainController.js') }}"></script>
+
+<script>
+	$(document).foundation();
+</script>
+</body>
+</html>
