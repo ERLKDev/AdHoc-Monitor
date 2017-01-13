@@ -164,5 +164,5 @@ Besides a String, the value can also be of the type: Integer, Double, Boolean an
 License
 -------
 
-The AdHoc Monitor system is available under the (MIT license)[LICENSE].
+The AdHoc Monitor system is available under the [MIT license](LICENSE).
 
