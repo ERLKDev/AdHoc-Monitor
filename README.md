@@ -146,6 +146,13 @@ For data that is received from a neighbour node:
 ```java
 mMonitor.getMonitorNode().addRecieveIO(String address, int byteAmount);
 ```
+#### Relative performance
+The CPU load of the node is automatically measured by the monitor program. However, it can also be useful to measure the performance of for instance an algorithm on the node. This can be done using ticks. Every tick is a performance tick. The monitor then calculates how many ticks per seconds are done by the node. This provides a indication of the performance of the algoritm of the node.
+
+A tick can be done using the following code:
+```java
+mMonitor.getMonitorNode().incrProcessTicks()
+```
 
 #### Custom values
 Also custom values can be provided to the monitor. To do this the following code can be used:
