@@ -109,7 +109,7 @@ __The following code fragments assume that the monitor service is bound and star
 #### Status
 The node status can be set with the following code:
 ```java
-mMonitor.getMonitorNode().setNodeStatus(MonitorNode.Status.IDLE);
+mMonitor.getMonitorNode().setNodeStatus(NodeStatus.IDLE);
 ```
 
 The enum Status contains the different statusses that a node can have. 
