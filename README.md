@@ -161,4 +161,8 @@ mMonitor.getMonitorNode().setCustomValue(String key, String value);
 ```
 Besides a String, the value can also be of the type: Integer, Double, Boolean and Long.
 
+License
+-------
+
+The AdHoc Monitor system is available under the (MIT license)[LICENSE].
 
