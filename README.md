@@ -9,9 +9,11 @@ Because the time on the nodes can differ from that of the monitor visualization 
 
 To send the data from the nodes to the monitor visualization process a UDP connection is used.
 
+The project contains two directories: [adhocmonitor](adhocmonitor) and [monitor-program](monitor-program). The [adhocmonitor](adhocmonitor) folder contains the android module. The [monitor-program](monitor-program) contains the visualization program.
+
 The monitor visualization process  
 -------------------------------------
-For the monitor visualization process a [python program](monitor-program) is available. The python program provides a web based user interface.
+For the monitor visualization process a [python program (monitor-program)](monitor-program) is available. The python program provides a web based user interface.
 
 ### Dependencies
 The python program runs on python 2.7 and uses [eventlet](https://github.com/eventlet/eventlet), [flask](http://flask.pocoo.org/) and [python-socketio](https://github.com/miguelgrinberg/python-socketio) to serve a web based UI.
@@ -58,7 +60,7 @@ statusunknown = gray        # Node color if the status is unknown (not in status
 
 The monitor node process
 -----------------------------
-For the monitor node process an [android module](adhocmonitor) is available, which can be used for android ad hoc networks. 
+For the monitor node process an [android module (adhocmonitor)](adhocmonitor) is available, which can be used for android ad hoc networks. This module should be imported into your android program. 
 
 ### Starting the monitor
 The android monitor service should be started and bind to the android application. After that, the monitor can be started. 
