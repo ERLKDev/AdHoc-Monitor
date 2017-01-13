@@ -135,6 +135,7 @@ __This function should be called each time the neighbours of the node changes. F
 
 #### IO
 To provide the IO information to the monitor the following code can be used:
+(the address is the neighbour node its address)
 
 For data that is send to a neighbour node:
 ```java
