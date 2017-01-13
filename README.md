@@ -46,7 +46,7 @@ tcp_maxpacketsize = 8096    # The packet size of the time synchronization packet
 
 [Settings]
 packetlistlimit = 600       # The amounts of packets that are stored for each node
-maxoffset = 1000            # The max time offset in milliseconds the program looks back to find a packet for a timestamp
+maxoffset = 2000            # The max time offset in milliseconds the program looks back to find a packet for a timestamp
 arraylenght = 10000         # The length of the charts interval in milliseconds
 
 [UI]
