@@ -160,3 +160,6 @@ Also custom values can be provided to the monitor. To do this the following code
 mMonitor.getMonitorNode().setCustomValue(String key, String value);
 ```
 Besides a String, the value can also be of the type: Integer, Double, Boolean and Long.
+
+### Getting values
+If you want to get the values that are collected by the monitor node the following function can be used (this is optional):
