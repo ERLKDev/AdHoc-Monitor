@@ -24,7 +24,7 @@ pip install python-socketio
 ```
 
 ### Starting the monitor visualization process 
-__Before running the program, it is important to change the ip in [config.ini](config.ini) into the local ip address of the device the monitor visualization process is running on!__
+__Before running the program, it is important to change the ip in [config.ini](monitor-program/config.ini) into the local ip address of the device the monitor visualization process is running on!__
 
 To run the monitor visualization program:
 ```
@@ -34,7 +34,7 @@ Python -u monitorService.py
 The UI is on default served on port 3000: [http://localhost:3000/](http://localhost:3000/)
 
 ### Config
-The settings of the monitor visualization program can be modified in [config.ini](config.ini).
+The settings of the monitor visualization program can be modified in [config.ini](monitor-program/config.ini).
 
 ```
 [Connection]
@@ -118,7 +118,7 @@ To add an extra status:
 
 1. Add the status to the Status enum. 
 
-2. Add the status to the monitor visualization process [config.ini](config.ini) to select the color of the status 
+2. Add the status to the monitor visualization process [config.ini](monitor-program/config.ini) to select the color of the status 
 
 
 #### Structure
