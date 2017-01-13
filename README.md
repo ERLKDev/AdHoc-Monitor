@@ -58,7 +58,7 @@ statusunknown = gray        # Node color if the status is unknown (not in status
 
 The monitor node process
 -----------------------------
-For the monitor node process an [android module](androidmonitor) is available, which can be used for android ad hoc networks. 
+For the monitor node process an [android module](adhocmonitor) is available, which can be used for android ad hoc networks. 
 
 ### Starting the monitor
 The android monitor service should be started and bind to the android application. After that, the monitor can be started. 
