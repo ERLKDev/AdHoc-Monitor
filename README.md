@@ -146,3 +146,10 @@ For data that is received from a neighbour node:
 ```java
 mMonitor.getMonitorNode().addRecieveIO(String address, int byteAmount);
 ```
+
+#### Custom values
+Also custom values can be provided to the monitor. To do this the following code can be used:
+```java
+mMonitor.getMonitorNode().setCustomValue(String key, String value);
+```
+Besides a String, the value can also be of the type: Integer, Double, Boolean and Long.
