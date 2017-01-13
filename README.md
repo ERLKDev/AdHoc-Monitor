@@ -125,10 +125,23 @@ To add an extra status:
 The current neighbours of the node (the nodes were the node has a connections with) can be set using the following code:
 
 ```java
-mMonitor.getMonitorNode().setCurrentNeighbours(["address1", "address2"]);
+mMonitor.getMonitorNode().setCurrentNeighbours(String[] currentNeighbours);
 ```
 
 The addresses could for instance be the mac addresses of the nodes.
 
 __This function should be called each time the neighbours of the node changes. For example, a new connection is made, or a connection is lost.__
 
+
+#### IO
+To provide the IO information to the monitor the following code can be used:
+
+For data that is send to a neighbour node:
+```java
+mMonitor.getMonitorNode().addSendIO(String address, int byteAmount);
+```
+
+For data that is received from a neighbour node:
+```java
+mMonitor.getMonitorNode().addRecieveIO(String address, int byteAmount);
+```
