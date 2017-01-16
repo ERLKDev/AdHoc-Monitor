@@ -32,6 +32,7 @@ To run the monitor visualization program:
 ```
 Python -u monitorService.py
 ```
+__The monitor visualization process should be started before the nodes, to allow the nodes to synchronize their time with the monitor visualization process!__
 
 The UI is by default served on port 3000: [http://localhost:3000/](http://localhost:3000/)
 
